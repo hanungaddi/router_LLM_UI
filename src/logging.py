@@ -1,8 +1,11 @@
+from datetime import datetime as dt
+import re
+
 def parse_log():
-    with open('./logs/netmiko_session.log', 'r') as file:
+    with open(f'./logs/netmiko_session.log', 'r') as file:
         log_snippet = file.read()
 
-    pattern = '.*\(config\)#([\s\S]+?).*\(config\)#end'
+    pattern = '\(config\)#\n([\s\S]+?.*end)'
 
     matches = re.findall(pattern, log_snippet)
 
