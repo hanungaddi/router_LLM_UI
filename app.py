@@ -6,4 +6,4 @@ if '__main__' == __name__:
     demo = ui()    
 
     # Run Gradio interface  
-    demo.launch(debug=True)
+    demo.launch(debug=True, share=True)
